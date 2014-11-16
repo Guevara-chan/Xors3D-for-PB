@@ -1,0 +1,2052 @@
+<?xml version="1.0" encoding="windows-1251" standalone="yes"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>
+			Xors3d Engine :: LogFile
+		</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+		<style type="text/css">
+			body {margin: 0px; background: #333; color: #d2c8b4; text-shadow: #000 0px 1px 1px; font-size: 11pt; font-family: sans-serif, sans, Arial; }
+			a { text-decoration: none;}
+			a:link { color: #d2c8b4; }
+			a:visited { color: #d2c8b4; }
+			a:active { color: #ff9900}
+			a:hover { color: #ff9900}
+			a.anchor {min-height: 20px;}
+			h1 { margin: 0px; margin-top: 15px; text-align: center; font-family: georgia, sans-serif, sans, arial;}
+			h2 { color: #ffffff; }
+			.message, .info, .warning, .error, .fatal { padding: 4px; overflow: auto; }
+			.message { background-color: #777; color: #333; text-shadow: #959595 0px 1px 1px;}
+			.info { background-color: #333; color: #777; text-shadow: #000 0px 1px 1px;}
+			.warning { background-color: #ffb164; color: #333; text-shadow: #eee 0px 1px 1px;}
+			.error { background-color: #ff6464; color: #333; text-shadow: #ccc 0px 1px 1px;}
+			.fatal { background-color: #000; color: #f00; text-shadow: #000 0px 0px 0px;}
+			.user, .pin, .flag { cursor: hand; cursor: pointer;}
+			.icon { min-height: 20px; text-align: center; width: 24px;}
+			.none { background: transparent;}
+			.user { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFGN0MxNzc2RjRGRDExRTA5QzEzRUNDQzI2RTM0MzU3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFGN0MxNzc3RjRGRDExRTA5QzEzRUNDQzI2RTM0MzU3Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUY3QzE3NzRGNEZEMTFFMDlDMTNFQ0NDMjZFMzQzNTciIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUY3QzE3NzVGNEZEMTFFMDlDMTNFQ0NDMjZFMzQzNTciLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz48Q98jAAABeElEQVR42syUO0vEQBDHk+wlp4Xi4xDERqzSinCidjbiV7A8sBILRU5tFOws/QqCldiL4CewsEunoAjCYWEROfP2P+du3Au7kcMUDvyyj+xM5pFZM8syo0qxjIqlRg/P85QvTdMkJjBdAwzcgI7OmOu63wZLxAb7YJNHc87X3VIPdYL8tjG0pa1t8IH9w9IcUmEUNEArTVOjQAv70yqd3EM6qJApMKfZnwGv2pA1BllJNuqqAmpzyN1/w9jhHsniQ/lFNpQkSX/Ivu//lNW2DcYYHaSQLnFwq+DJFfaeyABFFkWREcdxHmXPYBiGuQIdoK86jkPLIxycx7jMX99blnUgdORi9IUsFnLIQRAMYTpe+JFpPgLewadKV5XDWbAB1sEi/7mFUMdQW92Ba3ABHnQGKcZdsAcmf2nXJc4OOAOnonuEwRWwCk4GvAvGwDEYBrfU6+K2WQDNP1wyTaFf40V4pgqCUZHsAaTOc/rYK9K/v2ArN/glwADQWbI3eIX4jAAAAABJRU5ErkJggg==) center center no-repeat; ) }
+			.flag { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQxMzZDMkE4RjRGRTExRTA4M0FGRkUyQkFEQjk3RjcyIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQxMzZDMkE5RjRGRTExRTA4M0FGRkUyQkFEQjk3RjcyIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDEzNkMyQTZGNEZFMTFFMDgzQUZGRTJCQURCOTdGNzIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDEzNkMyQTdGNEZFMTFFMDgzQUZGRTJCQURCOTdGNzIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6qwQRXAAABV0lEQVR42syUvUrGMBSGc9pGVBRUdPNzFjqpt+Du6Obo5m24egUOXoAI4kU4CIpTBwcHURAUQW1rf1LfU1KINfGL0sHAQ36avjk/OaGmacSQLRADt8icJEmygG4ZhOAKOM1XSonOuziO7YJoa2AXTIIdsAWmDGECT+AE1GMtxIkz6FaABIvg0HLoLfadgxd9QAlyq6BiP4QotEU8fgNzPcERuNZ7+OAjsOcS9Ik7x3femM86XfYU/JafoQWFryAZ7tzruG2ApZ6GdArmeW6KcfaOiehMSnkahuFrURTrVVUdYG0V3yZ0dh+cgmVZdkPe/Igft6MoMq/VBQQ3sT7SlvGNeHYK9lrVmkr0ZRHzD3Q3f6ll4tJiqzm2fWGvpLhqNk3Ttm59RAPLXOoYdi62ZFkm6roeK9qv5Xd0d2Da9tIgIb92+RLs6/JSNveD4OcnlP79i/0pwABxf4RnjygPUwAAAABJRU5ErkJggg==) center center no-repeat; ) }
+			.pin { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkUxMEJFM0RFRjRGRDExRTA4ODQxQ0M1NzU1RDU5RUE5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkUxMEJFM0RGRjRGRDExRTA4ODQxQ0M1NzU1RDU5RUE5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RTEwQkUzRENGNEZEMTFFMDg4NDFDQzU3NTVENTlFQTkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RTEwQkUzRERGNEZEMTFFMDg4NDFDQzU3NTVENTlFQTkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7sh9gcAAABJUlEQVR42mL8//8/AzUBEwOVAQs2wWvXrjEwMjKCMRCwArE0EIsD8WMgfgYS1NDQINmFINNUgTgbiKcB8WogNifLhUDgDsSRwPANBmIeJPH3UFeTHIYf/v379wuIeUCRhoQtgGIMIEySgUCNJ4G4HqjxJcwAKPb/+/cvAwiTZOCfP39Amp4DDdiDZqAu0CIrkg1EMmAvmoHcQLwZqMSPJANh3gJiNiQ2DAsBcSRJsfzt2zcY0wg9soB4GRB3kmQgUnZcC8QCQPwSiL2B+AFQLhtf0mEhkE53gTDUghdAXAXEIkD+G2rk5UPQbOhFUeGA5P3jQPwEiK1JNhA5dyBHPhDPBmJZIGYjN1LQwSyoK0Fe/0VOpKCDd9CY/4WziBr0JTZAgAEAbmHO7M75DdQAAAAASUVORK5CYII=) center center no-repeat; ) }
+			.aux { font-size: small; }
+			.filter_checkbox, .filter_button {margin-left: 7px; border: 1px solid #777; background-color: #222; font-family: sans-serif, sans, Arial; font-size: 11pt; color: #777;}
+			.filter_checkbox:click, .filter_button:click {border-color: #27c; color: #29c;}
+			.filter_checkbox:hover, .filter_button:hover, .filter_checkbox:focus, .filter_button:focus {border-color: #ccc; color: #ccc;}
+			.infopanel { background-color: #1a1a1a; border: none; border-top: 1px solid #444; color: #aaa; margin-left: auto; margin-right: auto; width: 100%; height: 50px; text-shadow: #333 0px 1px 1px; font-size: 10pt; padding: 10px; position: fixed; bottom:0; z-index:2; text-align: left;}
+			.infopanel_icons { float: left; margin-left: 10px;}
+			.infopanel_left { float: left; margin-left: 10px; padding-left: 16px; border-left: 1px solid #555;}
+			.infopanel_right { float: right; margin-right: 25px; padding-left: 10px; border-left: 1px solid #555;}
+			.infopanel_right_engine { text-align: right;}
+			.infopanel_right_user { text-align: right; margin-top: 5px;}
+			#infoFunc, #infoFile, #infoLine { color: #c77127;}
+			.container {margin-right: 20px; margin-left: 20px;}
+		</style>
+
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<script type="text/JavaScript">//<![CDATA[
+			var ie = (document.all) ? true : false;
+			var lockedElem = null;
+			var g_Func = '';
+			var g_File = '';
+			var g_Line = '';
+			var ignore = false;
+			function toggleClass(objClass){
+				var element = getElementByClass(objClass);
+				if (typeof(element) === 'undefined') return;
+				if (element.style.display =='none'){
+					showClass(objClass)
+				}else{
+					hideClass(objClass)
+				}
+			}
+			function hideClass(objClass){
+				var elements = (ie) ? document.all : document.getElementsByTagName('*');
+				for (i=0; i < elements.length; i++){
+					if (elements[i].className == objClass){
+						elements[i].style.display='none'
+					}
+				}
+			}
+			function showClass(objClass){
+				var elements = (ie) ? document.all : document.getElementsByTagName('*');
+				for (i=0; i < elements.length; i++){
+					if (elements[i].className == objClass){
+						elements[i].style.display='table-cell'
+					}
+				}
+			}
+			function getElementByClass(objClass){
+				var elements = (ie) ? document.all : document.getElementsByTagName('*');
+				for (i=0; i < elements.length; i++){
+					if (elements[i].className == objClass){
+						return elements[i]
+					}
+				}
+			}
+			function upd_fill()
+			{
+				if ((lockedElem == null) || (ignore == true))
+				{
+					document.getElementById('infoFunc').innerHTML = g_Func;
+					document.getElementById('infoFile').innerHTML = g_File;
+					document.getElementById('infoLine').innerHTML = g_Line;
+				}
+				ignore = false;
+			}
+			function upd_clear()
+			{
+				if ((lockedElem == null) || (ignore == true))
+				{
+					document.getElementById('infoFunc').innerHTML = '';
+					document.getElementById('infoFile').innerHTML = '';
+					document.getElementById('infoLine').innerHTML = '';
+				}
+				ignore = false;
+			}
+			function showAll(postfix)
+			{
+				showClass('info '+postfix);
+				showClass('message '+postfix);
+				showClass('warning '+postfix);
+				showClass('error '+postfix);
+				showClass('fatal '+postfix);
+				document.getElementById('info-'+postfix).checked = true;
+				document.getElementById('message-'+postfix).checked = true;
+				document.getElementById('warning-'+postfix).checked = true;
+				document.getElementById('error-'+postfix).checked = true;
+				document.getElementById('fatal-'+postfix).checked = true;
+			}
+			function hideAll(postfix)
+			{
+				hideClass('info '+postfix);
+				hideClass('message '+postfix);
+				hideClass('warning '+postfix);
+				hideClass('error '+postfix);
+				hideClass('fatal '+postfix);
+				document.getElementById('info-'+postfix).checked = false;
+				document.getElementById('message-'+postfix).checked = false;
+				document.getElementById('warning-'+postfix).checked = false;
+				document.getElementById('error-'+postfix).checked = false;
+				document.getElementById('fatal-'+postfix).checked = false;
+			}
+			function toggleAll(postfix)
+			{
+				toggleClass('info '+postfix);
+				toggleClass('message '+postfix);
+				toggleClass('warning '+postfix);
+				toggleClass('error '+postfix);
+				toggleClass('fatal '+postfix);
+				document.getElementById('info-'+postfix).checked = !(document.getElementById('info-'+postfix).checked);
+				document.getElementById('message-'+postfix).checked = !(document.getElementById('message-'+postfix).checked);
+				document.getElementById('warning-'+postfix).checked = !(document.getElementById('warning-'+postfix).checked);
+				document.getElementById('error-'+postfix).checked = !document.getElementById('error-'+postfix).checked;
+				document.getElementById('fatal-'+postfix).checked = !document.getElementById('fatal-'+postfix).checked;
+			}
+			function set_pin(elem, class_name)
+			{
+				if (elem != null)
+				{
+					for (i=0; i < elem.childNodes.length; i++)
+					{
+						if (elem.childNodes[i].title == 'pin_icon')
+						{
+							elem.childNodes[i].className = class_name;
+							break;
+						}
+					}
+				}
+			}
+			function upd_lock(elem)
+			{
+				set_pin(lockedElem, 'icon none');
+				if ((elem == lockedElem) || (elem == null))
+				{
+					lockedElem = null;
+					document.getElementById('infopanel_pin').className = 'icon none';
+					document.getElementById('infopanel_flag').className = 'icon none';
+					document.getElementById('infopanel_pin').title = '';
+					document.getElementById('infopanel_flag').title = '';
+				}
+				else
+				{
+					lockedElem = elem;
+					set_pin(elem, 'icon pin');
+					document.getElementById('infopanel_pin').className = 'icon pin';
+					document.getElementById('infopanel_flag').className = 'icon flag';
+					document.getElementById('infopanel_pin').title = 'Unpin entry';
+					document.getElementById('infopanel_flag').title = 'Go to pinned entry';
+				}
+				ignore = true;
+				if (elem == null)
+					upd_clear();
+				else
+					upd_fill();
+			}
+			function upd_info(funcP, fileP, lineP)
+			{
+				g_Func = funcP;
+				g_File = fileP;
+				g_Line = lineP;
+			}
+			function get_window_height()
+			{
+				var height = 0;
+				if (self.innerHeight)
+				{
+						height = self.innerHeight;
+				}
+				else if (document.documentElement && document.documentElement.clientHeight)
+				{
+						height = document.documentElement.clientHeight;
+				}
+				else if (document.body)
+				{
+						height = document.body.clientHeight;
+				}
+				return height;
+			}
+			function get_position(elem)
+			{
+				var top = 0;
+				do{
+					top += elem.offsetTop;
+				} while (elem = elem.offsetParent);
+				return top;
+			}
+			function scroll_to_anchor()
+			{
+				if (lockedElem == null)
+					return;
+				var position = get_position(lockedElem) - get_window_height() / 2 + 50;
+				window.scrollTo(0, position);
+			}
+		//]]></script>
+
+	</head>
+	<body onload="showAll('e_engine'); showAll('e_user');">
+	<div class="infopanel">
+		<div class="infopanel_icons">
+			<div id="infopanel_pin" class="icon none" onclick="upd_lock(null);"></div>
+			<div style="height: 5px;"></div>
+			<div id="infopanel_flag" class="icon none" onclick="scroll_to_anchor();"></div>
+		</div>
+		<div class="infopanel_left">
+			<span>Function:</span><span id="infoFunc"></span><br />
+			<span>File:</span><span id="infoFile"></span><br />
+			<span>Line:</span><span id="infoLine"></span><br />
+		</div>
+		<div class="infopanel_right">
+			<div class="infopanel_right_engine">
+				<span style="">Engine:</span>
+				<span><input type="checkbox" class="filter_checkbox" checked="checked" id="info-e_engine" onchange="toggleClass('info e_engine');"/>Info</span>
+				<span><input type="checkbox" class="filter_checkbox" checked="checked" id="message-e_engine" onchange="toggleClass('message e_engine');"/>Message</span>
+				<span><input type="checkbox" class="filter_checkbox" checked="checked" id="warning-e_engine" onchange="toggleClass('warning e_engine');"/>Warning</span>
+				<span><input type="checkbox" class="filter_checkbox" checked="checked" id="error-e_engine" onchange="toggleClass('error e_engine');"/>Error</span>
+				<span><input type="checkbox" class="filter_checkbox" checked="checked" id="fatal-e_engine" onchange="toggleClass('fatal e_engine');"/>Fatal</span>
+				<input type="button" class="filter_button" value="All" onclick="showAll('e_engine');"/>
+				<input type="button" class="filter_button" value="None" onclick="hideAll('e_engine');"/>
+				<input type="button" class="filter_button" value="Invert" onclick="toggleAll('e_engine');"/>
+			</div>
+			<div class="infopanel_right_user">
+				<span>User:</span>
+				<span><input type="checkbox" class="filter_checkbox" checked="checked" id="info-e_user" onchange="toggleClass('info e_user');"/>Info</span>
+				<span><input type="checkbox" class="filter_checkbox" checked="checked" id="message-e_user" onchange="toggleClass('message e_user');"/>Message</span>
+				<span><input type="checkbox" class="filter_checkbox" checked="checked" id="warning-e_user" onchange="toggleClass('warning e_user');"/>Warning</span>
+				<span><input type="checkbox" class="filter_checkbox" checked="checked" id="error-e_user" onchange="toggleClass('error e_user');"/>Error</span>
+				<span><input type="checkbox" class="filter_checkbox" checked="checked" id="fatal-e_user" onchange="toggleClass('fatal e_user');"/>Fatal</span>
+				<input type="button" class="filter_button" value="All" onclick="showAll('e_user');"/>
+				<input type="button" class="filter_button" value="None" onclick="hideAll('e_user');"/>
+				<input type="button" class="filter_button" value="Invert" onclick="toggleAll('e_user');"/>
+			</div>
+		</div>
+	</div>
+	<h1>
+		<a href="http://xors3d.com">Xors3d log</a>
+	</h1>
+	<div class="container">
+		<p>Log started at: 21:46:41 11/11/14 (Engine Time: 0:00:00:00.002)</p>
+		<table width="95%" cellspacing="0" cellpadding="0" border="0">
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('LogSys::LogEngine', 'log.cpp', '566'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="message e_engine">
+					<span class="aux">
+						0:00:00:00.002
+					</span>
+				</td>
+				<td class="message e_engine">
+					Xors3d Engine version: 1.15.750.0 ( Mar 16 2012 ) 
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('LogSys::LogOS', 'log.cpp', '666'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="message e_engine">
+					<span class="aux">
+						0:00:00:00.002
+					</span>
+				</td>
+				<td class="message e_engine">
+					OS: Microsoft Windows XP Service Pack 3 (build 5.1.2600)
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('LogSys::LogCPU', 'log.cpp', '631'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="message e_engine">
+					<span class="aux">
+						0:00:00:00.002
+					</span>
+				</td>
+				<td class="message e_engine">
+					4 CPUs: AMD A6-5200 APU with Radeon(TM) HD Graphics     at 2000MHz (MMX, SSE, SSE2)
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('LogSys::LogMem', 'log.cpp', '639'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="message e_engine">
+					<span class="aux">
+						0:00:00:00.002
+					</span>
+				</td>
+				<td class="message e_engine">
+					RAM: 3037 MBytes. Paged memory: 4979 MBytes.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('LogSys::LogVideo', 'log.cpp', '647'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="message e_engine">
+					<span class="aux">
+						0:00:00:00.004
+					</span>
+				</td>
+				<td class="message e_engine">
+					Video: AMD Radeon HD 7000 series. VRAM: 1024 MBytes.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('LogSys::LogVideo', 'log.cpp', '658'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="message e_engine">
+					<span class="aux">
+						0:00:00:00.004
+					</span>
+				</td>
+				<td class="message e_engine">
+					Physical screen size: 380mm x 300mm. Aspect ratio: 1.26667 (18:15).
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xAppTitle', 'graphics.cpp', '208'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:00.010
+					</span>
+				</td>
+				<td class="info e_engine">
+					AppTitle: Physics sample
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('Render::Create', 'render.cpp', '204'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="message e_engine">
+					<span class="aux">
+						0:00:00:00.026
+					</span>
+				</td>
+				<td class="message e_engine">
+					X8R8B8B8 backbuffer format.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('Render::Create', 'render.cpp', '255'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="message e_engine">
+					<span class="aux">
+						0:00:00:00.026
+					</span>
+				</td>
+				<td class="message e_engine">
+					4X antialiasing.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('Render::Create', 'render.cpp', '399'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="message e_engine">
+					<span class="aux">
+						0:00:00:00.043
+					</span>
+				</td>
+				<td class="message e_engine">
+					800x600x32 windowed graphics mode
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('Render::SetAspectRatio', 'render.cpp', '845'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="message e_engine">
+					<span class="aux">
+						0:00:00:00.043
+					</span>
+				</td>
+				<td class="message e_engine">
+					Setting new aspect ratio: 1.33333<br />New virtual viewport is 800 x 600
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('InputManager::Create', 'inputmanager.cpp', '153'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="message e_engine">
+					<span class="aux">
+						0:00:00:03.125
+					</span>
+				</td>
+				<td class="message e_engine">
+					1 game controller found.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('SoundManager::Create', 'soundmanager.cpp', '72'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="message e_engine">
+					<span class="aux">
+						0:00:00:03.265
+					</span>
+				</td>
+				<td class="message e_engine">
+					Squall loaded successfully.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('LoadPhysics', 'physimport.h', '50'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="message e_engine">
+					<span class="aux">
+						0:00:00:03.268
+					</span>
+				</td>
+				<td class="message e_engine">
+					xPhysics is loaded.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xWorld::CreateDefault', 'world.cpp', '39'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.271
+					</span>
+				</td>
+				<td class="info e_engine">
+					Default world created ( 023CCBF0 )
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('GUIManager::CreateFontA', 'guimanager.cpp', '55'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.318
+					</span>
+				</td>
+				<td class="info e_engine">
+					New font 'Tahoma' (size: 10) loaded in 46.331 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCreateCamera', 'cameras.cpp', '122'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.318
+					</span>
+				</td>
+				<td class="info e_engine">
+					New camera (handle: 023D7B5C) is created in 0.323 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCreateCube', 'meshes.cpp', '82'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.318
+					</span>
+				</td>
+				<td class="info e_engine">
+					New cube (handle: 023D8DB4) is created in 0.217 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xLoadTexture', 'textures.cpp', '98'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.373
+					</span>
+				</td>
+				<td class="info e_engine">
+					New texture (handle: 023CC2F0) is loaded from file '\..\media\textures\logo.jpg' in 54.62 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCreateCube', 'meshes.cpp', '82'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.373
+					</span>
+				</td>
+				<td class="info e_engine">
+					New cube (handle: 023DB47C) is created in 0.168 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.374
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0240F91C) in 0.064 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.374
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 023DCC04) in 0.05 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.374
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 023DEF24) in 0.051 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.374
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 023E124C) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.374
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 023E3584) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.374
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 023E58EC) in 0.044 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.374
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 023E7C14) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.375
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 023E9F5C) in 0.051 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.375
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 023EC2B4) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.375
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 023EE614) in 0.045 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.375
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 023F096C) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.375
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 023F2C84) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.375
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 023F4F9C) in 0.051 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.375
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 023F730C) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.375
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 023F967C) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.376
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 023FB99C) in 0.044 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.376
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 023FDCB4) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.376
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 023FFFCC) in 0.051 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.376
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0240235C) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.376
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024046EC) in 0.045 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.376
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02406A7C) in 0.044 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.376
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02408D94) in 0.044 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.376
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0240B0AC) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.376
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0240D3BC) in 0.068 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.377
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024126D4) in 0.062 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.377
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024149E4) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.377
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02416CF4) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.377
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024190B4) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.377
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0241B40C) in 0.049 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.377
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0241D754) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.377
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0241FA64) in 0.05 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.377
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02421D74) in 0.044 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.378
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02424084) in 0.059 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.378
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0242639C) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.378
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024286AC) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.378
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0242A9BC) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.378
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0242CCCC) in 0.045 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.379
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0242EFDC) in 0.053 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.379
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024312EC) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.379
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024335FC) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.379
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0243590C) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.379
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02437D24) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.379
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0243A034) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.379
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0243C44C) in 0.045 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.380
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0243E75C) in 0.051 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.380
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02440A6C) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.380
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02442D7C) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.380
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0244508C) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.380
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0244739C) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.380
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024496AC) in 0.045 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.380
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0244B9BC) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.380
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0244DCCC) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.381
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0244FFDC) in 0.056 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.381
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024522EC) in 0.045 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.381
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024545FC) in 0.044 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.381
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0245690C) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.381
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02458C1C) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.381
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0245AF2C) in 0.051 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.381
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0245D23C) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.381
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0245F54C) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.381
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0246185C) in 0.044 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.382
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02463B6C) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.382
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0246617C) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.382
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0246848C) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.382
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0246A924) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.382
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0246CC34) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.382
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0246EF44) in 0.05 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.383
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02471254) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.383
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02473564) in 0.045 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.383
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02475874) in 0.045 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.383
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02477B84) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.383
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02479E94) in 0.051 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.383
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0247C1A4) in 0.045 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.383
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0247E4B4) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.384
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024807C4) in 0.061 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.384
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02482ADC) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.384
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02484DEC) in 0.051 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.384
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024870FC) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.384
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0248940C) in 0.044 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.384
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0248B71C) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.384
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0248DA2C) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.384
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0248FD3C) in 0.049 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.384
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02492054) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.385
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 02494364) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.385
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0249667C) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.385
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0249898C) in 0.044 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.385
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0249AC9C) in 0.045 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.385
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0249CFAC) in 0.05 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.385
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 0249F2BC) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.385
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024A15CC) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.386
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024A38DC) in 0.05 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.386
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024A5BEC) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.386
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024A7EFC) in 0.052 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.386
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024AA68C) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.386
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024AC99C) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.387
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024AEEEC) in 0.053 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.387
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024B11FC) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.387
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024B350C) in 0.045 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.387
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024B581C) in 0.045 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.387
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024B7B2C) in 0.044 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.387
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024B9E3C) in 0.052 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.387
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024BC14C) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.387
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024BE45C) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.388
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024C076C) in 0.05 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.388
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024C2A84) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.388
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024C4D94) in 0.052 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.388
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024C70A4) in 0.045 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.388
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024C93B4) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.388
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024CB6C4) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.388
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 024CD9D4) in 0.044 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.389
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 03CE004C) in 0.067 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.389
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 03CE2034) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.389
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 03CE4344) in 0.053 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.389
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 03CE665C) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.389
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 03CE896C) in 0.044 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.389
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 03CEAC7C) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.389
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 03CECF8C) in 0.051 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.389
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 03CEF29C) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.390
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 03CF15AC) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.390
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 03CF38BC) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.390
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 03CF5BCC) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.390
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 03CF7EDC) in 0.048 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.390
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 03CFA1EC) in 0.047 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCopyEntity', 'entity_control.cpp', '47'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.390
+					</span>
+				</td>
+				<td class="info e_engine">
+					Entity (handle: 023DB47C) is copied (copy handle: 03CFC4FC) in 0.046 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCreateLight', 'lights.cpp', '22'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:03.391
+					</span>
+				</td>
+				<td class="info e_engine">
+					New directional light (handle: 03CFE80C) is created in 0.039 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCreateSphere', 'meshes.cpp', '97'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:04.632
+					</span>
+				</td>
+				<td class="info e_engine">
+					New sphere (handle: 03D133DC) is created in 1.627 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('xCreateSphere', 'meshes.cpp', '97'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="info e_engine">
+					<span class="aux">
+						0:00:00:05.108
+					</span>
+				</td>
+				<td class="info e_engine">
+					New sphere (handle: 03D165DC) is created in 2.028 ms.
+				</td>
+			</tr>
+			<tr style='cursor: hand; cursor: pointer;' onclick = "upd_lock(this);" onmouseover = "upd_info('DllMain', 'main.cpp', '71'); upd_fill();" onmouseout="upd_clear();">
+				<td title="pin_icon" class="icon none"></td>
+				<td class="icon none"></td>
+				<td style="text-align: center; width: 180px;" class="message e_engine">
+					<span class="aux">
+						0:00:00:06.403
+					</span>
+				</td>
+				<td class="message e_engine">
+					Xors3d Engine is released
+				</td>
+			</tr>
+		</table>
+		<p style="padding-top: 7px;">Log finished at: 21:46:48 11/11/14 (Engine Time: 0:00:00:06.403)</p>
+		</div>
+		<div style="height:100px;">
+		</div>
+	</body>
+</html>
