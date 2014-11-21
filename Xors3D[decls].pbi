@@ -1,7 +1,8 @@
 ; *=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*
 ; Xors3D's low-level declarations.
-; Converted in 2012 by Chrono Syndrome.
+; Converted in 2012 by Guevara-chan.
 ; *=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*
+
 Define *Library_ = OpenLibrary(#PB_Any, "xors3d.dll")
 
 Prototype.L _xCreateLine3D_(fromX.F, fromY.F, fromZ.F, toX.F, toY.F, toZ.F, red.L, green.L, blue.L, alpha.L, useZBuffer.L)
@@ -2591,3 +2592,7 @@ Prototype.L _xGetDefaultWorld()
 Global xGetDefaultWorld._xGetDefaultWorld = GetFunction(*Library_, "_xGetDefaultWorld@0")
 Prototype.L _xDeleteWorld(world.L)
 Global xDeleteWorld._xDeleteWorld = GetFunction(*Library_, "_xDeleteWorld@4")
+
+; IDE Options = PureBasic 5.30 (Windows - x86)
+; EnableUnicode
+; EnableXP

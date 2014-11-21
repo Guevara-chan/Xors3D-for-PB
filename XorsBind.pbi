@@ -1,8 +1,9 @@
 ; *=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*
 ; xScript's binding declarations.
-; Converted in 2011 by Chrono Syndrome.
+; Converted in 2012 by Guevara-chan
 ; *=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*
-IncludeFile "xScript_decls.pbi"
+
+IncludeFile "xScript[decls].pbi"
 
 xRegisterFunction("int xCreateLine3D(float, float, float, float, float, float, int, int, int, int, int)", xGetFunctionAddress("xCreateLine3D"))
 xRegisterFunction("void xLine3DOrigin(int, float, float, float, int)", xGetFunctionAddress("xLine3DOrigin"))
@@ -1038,3 +1039,8 @@ xRegisterFunction("void xSetActiveWorld(int)", xGetFunctionAddress("xSetActiveWo
 xRegisterFunction("int xGetActiveWorld()", xGetFunctionAddress("xGetActiveWorld"))
 xRegisterFunction("int xGetDefaultWorld()", xGetFunctionAddress("xGetDefaultWorld"))
 xRegisterFunction("void xDeleteWorld(int)", xGetFunctionAddress("xDeleteWorld"))
+; IDE Options = PureBasic 5.30 (Windows - x86)
+; CursorPosition = 2
+; Markers = 786,1011
+; EnableUnicode
+; EnableXP

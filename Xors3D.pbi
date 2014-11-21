@@ -1,10 +1,9 @@
 ; *=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*
-; Xors3D's high-level declarations.
-; Converted in 2012 by Chrono Syndrome.
+; Xors3D's low-level declarations.
+; Converted in 2012 by Guevara-chan.
 ; *=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*
 
-IncludeFile "Xors3d_decls.pbi"
-
+IncludeFile "Xors3d[decls].pbi"
 
 ; Log levels
 #LOG_NO            = 5
@@ -1576,4 +1575,7 @@ EndMacro
 #xKEY_LEFTARROW     = #KEY_LEFT
 #xKEY_RIGHTARROW    = #KEY_RIGHT
 #xKEY_DOWNARROW     = #KEY_DOWN
-#xKEY_PGDN          = #KEY_NEXT 
+#xKEY_PGDN          = #KEY_NEXT
+; IDE Options = PureBasic 5.30 (Windows - x86)
+; EnableUnicode
+; EnableXP
