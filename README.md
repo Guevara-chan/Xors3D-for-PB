@@ -11,6 +11,6 @@ Just `XIncludeFile "Xors3D.pbi"` to hook it up - maximum transparency, PB style.
 + XCopy-based installation.  
 
 ##/Breakdown/:
-**Graphix:** DirectX: 9.0c (d3dx9_36.dll+ required)  
-**Physix:** integrated (xPhysics v1.15.750.0)  
+**Graphix:** DirectX: 9.0c (*d3dx9_36.dll+* required)  
+**Physix:** integrated (*xPhysics v1.15.750.0*)  
 **Audio:** Squall sound system (version unknown)  
