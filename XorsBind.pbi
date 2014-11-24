@@ -1040,7 +1040,5 @@ xRegisterFunction("int xGetActiveWorld()", xGetFunctionAddress("xGetActiveWorld"
 xRegisterFunction("int xGetDefaultWorld()", xGetFunctionAddress("xGetDefaultWorld"))
 xRegisterFunction("void xDeleteWorld(int)", xGetFunctionAddress("xDeleteWorld"))
 ; IDE Options = PureBasic 5.30 (Windows - x86)
-; CursorPosition = 2
-; Markers = 786,1011
 ; EnableUnicode
 ; EnableXP
