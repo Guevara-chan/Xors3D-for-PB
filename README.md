@@ -6,7 +6,7 @@ Just `XIncludeFile "Xors3D.pbi"` to hook it up - maximum transparency, PB style.
 
 ##/Featurae/:
 + 69 original Xors3D samples, translated from different sources to PureBasic.  
-+ Latest salvageable Xors3D revision: 1.15.750.0  
++ Latest salvageable Xors3D revision: *1.15.750.0*  
 + Dynamical prototype-based bindings.  
 + XCopy-based installation.  
 
