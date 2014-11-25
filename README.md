@@ -17,5 +17,5 @@ Just `XIncludeFile "Xors3D.pbi"` to hook it up - maximum transparency, PB style.
 
 ##/Sample imaging/:
 ![Holoscreen.pb](https://cloud.githubusercontent.com/assets/8768470/5170756/5bfa2868-7423-11e4-9d50-e0667a39be04.png)
-
+---
 ![Blocks.pb](https://cloud.githubusercontent.com/assets/8768470/5170757/5c08d75a-7423-11e4-8def-c6df8bc6f156.png)
