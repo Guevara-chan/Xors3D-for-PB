@@ -4,7 +4,7 @@
 **Xors3D for PureBasic** was one of first pre-official wrappers, reconstructed directly from Blitz3D headers.  
 Just `XIncludeFile "Xors3D.pbi"` to hook it up - maximum transparency, PB style.
 
-## /Featurae/:
+## /Featuræ/:
 + 69 original Xors3D samples, translated from different sources to PureBasic.  
 + Latest salvageable engine revision: *1.15.750.0*  
 + Dynamical prototype-based bindings.  
