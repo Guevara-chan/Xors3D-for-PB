@@ -95,7 +95,7 @@ Prototype.L _xBrushTexture(brush.L, texture.L, frame.L, index.L)
 Global xBrushTexture._xBrushTexture = GetFunction(*Library_, "xBrushTexture")
 Prototype.I _xGetBrushName(brush.L)
 Global xGetBrushName_._xGetBrushName = GetFunction(*Library_, "_xGetBrushName@4")
-Macro xGetBrushName(brush) : PeekS(xGetBrushName_(brush)) : EndMacro
+Macro xGetBrushName(brush) : PeekS(xGetBrushName_(brush), -1, #PB_Ascii) : EndMacro
 Prototype.L _xBrushName(brush.L, name.P-Ascii)
 Global xBrushName._xBrushName = GetFunction(*Library_, "_xBrushName@8")
 Prototype.F _xGetBrushAlpha(brush.L)
@@ -586,7 +586,7 @@ Prototype.F _xGetMatElement(entity.L, row.L, col.L)
 Global xGetMatElement._xGetMatElement = GetFunction(*Library_, "_xGetMatElement@12")
 Prototype.I _xEntityClass(entity.L)
 Global xEntityClass_._xEntityClass = GetFunction(*Library_, "_xEntityClass@4")
-Macro xEntityClass(entity) : PeekS(xEntityClass_(entity)) : EndMacro
+Macro xEntityClass(entity) : PeekS(xEntityClass_(entity), -1, #PB_Ascii) : EndMacro
 Prototype.L _xGetEntityBrush(entity.L)
 Global xGetEntityBrush._xGetEntityBrush = GetFunction(*Library_, "_xGetEntityBrush@4")
 Prototype.F _xEntityX_(entity.L, isGlobal.L)
@@ -623,7 +623,7 @@ Prototype.F _xEntityPitch(entity.L, isGlobal.L)
 Global xEntityPitch._xEntityPitch = GetFunction(*Library_, "xEntityPitch")
 Prototype.I _xEntityName(entity.L)
 Global xEntityName_._xEntityName = GetFunction(*Library_, "_xEntityName@4")
-Macro xEntityName(entity) : PeekS(xEntityName_(entity)) : EndMacro
+Macro xEntityName(entity) : PeekS(xEntityName_(entity), -1, #PB_Ascii) : EndMacro
 Prototype.L _xCountChildren(entity.L)
 Global xCountChildren._xCountChildren = GetFunction(*Library_, "_xCountChildren@4")
 Prototype.L _xGetChild(entity.L, index.L)
@@ -682,22 +682,22 @@ Prototype.L _xFileCreationTime(path.P-Ascii)
 Global xFileCreationTime._xFileCreationTime = GetFunction(*Library_, "_xFileCreationTime@4")
 Prototype.I _xFileCreationTimeStr(path.P-Ascii)
 Global xFileCreationTimeStr_._xFileCreationTimeStr = GetFunction(*Library_, "_xFileCreationTimeStr@4")
-Macro xFileCreationTimeStr(path) : PeekS(xFileCreationTimeStr_(path)) : EndMacro
+Macro xFileCreationTimeStr(path) : PeekS(xFileCreationTimeStr_(path), -1, #PB_Ascii) : EndMacro
 Prototype.L _xFileModificationTime(path.P-Ascii)
 Global xFileModificationTime._xFileModificationTime = GetFunction(*Library_, "_xFileModificationTime@4")
 Prototype.I _xFileModificationTimeStr(path.P-Ascii)
 Global xFileModificationTimeStr_._xFileModificationTimeStr = GetFunction(*Library_, "_xFileModificationTimeStr@4")
-Macro xFileModificationTimeStr(path) : PeekS(xFileModificationTimeStr_(path)) : EndMacro
+Macro xFileModificationTimeStr(path) : PeekS(xFileModificationTimeStr_(path), -1, #PB_Ascii) : EndMacro
 Prototype.L _xReadDir(path.P-Ascii)
 Global xReadDir._xReadDir = GetFunction(*Library_, "_xReadDir@4")
 Prototype.L _xCloseDir(handle.L)
 Global xCloseDir._xCloseDir = GetFunction(*Library_, "_xCloseDir@4")
 Prototype.I _xNextFile(handle.L)
 Global xNextFile_._xNextFile = GetFunction(*Library_, "_xNextFile@4")
-Macro xNextFile(handle) : PeekS(xNextFile_(handle)) : EndMacro
+Macro xNextFile(handle) : PeekS(xNextFile_(handle), -1, #PB_Ascii) : EndMacro
 Prototype.I _xCurrentDir()
 Global xCurrentDir_._xCurrentDir = GetFunction(*Library_, "_xCurrentDir@0")
-Macro xCurrentDir() : PeekS(xCurrentDir_()) : EndMacro
+Macro xCurrentDir() : PeekS(xCurrentDir_(), -1, #PB_Ascii) : EndMacro
 Prototype.L _xChangeDir(path.P-Ascii)
 Global xChangeDir._xChangeDir = GetFunction(*Library_, "_xChangeDir@4")
 Prototype.L _xCreateDir(path.P-Ascii)
@@ -720,10 +720,10 @@ Prototype.F _xReadFloat(file.L)
 Global xReadFloat._xReadFloat = GetFunction(*Library_, "_xReadFloat@4")
 Prototype.I _xReadString(file.L)
 Global xReadString_._xReadString = GetFunction(*Library_, "_xReadString@4")
-Macro xReadString(file) : PeekS(xReadString_(file)) : EndMacro
+Macro xReadString(file) : PeekS(xReadString_(file), -1, #PB_Ascii) : EndMacro
 Prototype.I _xReadLine_(file.L, ls_flag.L)
 Global xReadLine__._xReadLine_ = GetFunction(*Library_, "_xReadLine@8")
-Macro xReadLine_(file,ls_flag) : PeekS(xReadLine__(file,ls_flag)) : EndMacro
+Macro xReadLine_(file,ls_flag) : PeekS(xReadLine__(file,ls_flag), -1, #PB_Ascii) : EndMacro
 Prototype.L _xWriteByte(file.L, value.L)
 Global xWriteByte._xWriteByte = GetFunction(*Library_, "_xWriteByte@8")
 Prototype.L _xWriteShort(file.L, value.L)
@@ -980,7 +980,7 @@ Prototype.L _xSetEngineSetting(parameter.P-Ascii, value.P-Ascii)
 Global xSetEngineSetting._xSetEngineSetting = GetFunction(*Library_, "_xSetEngineSetting@8")
 Prototype.I _xGetEngineSetting(parameter.P-Ascii)
 Global xGetEngineSetting_._xGetEngineSetting = GetFunction(*Library_, "_xGetEngineSetting@4")
-Macro xGetEngineSetting(parameter) : PeekS(xGetEngineSetting_(parameter)) : EndMacro
+Macro xGetEngineSetting(parameter) : PeekS(xGetEngineSetting_(parameter), -1, #PB_Ascii) : EndMacro
 Prototype.L _xHWInstancingAvailable()
 Global xHWInstancingAvailable._xHWInstancingAvailable = GetFunction(*Library_, "_xHWInstancingAvailable@0")
 Prototype.L _xShaderInstancingAvailable()
@@ -1263,7 +1263,7 @@ Prototype.L _xCloseLog()
 Global xCloseLog._xCloseLog = GetFunction(*Library_, "_xCloseLog@0")
 Prototype.I _xGetLogString()
 Global xGetLogString_._xGetLogString = GetFunction(*Library_, "_xGetLogString@0")
-Macro xGetLogString() : PeekS(xGetLogString_()) : EndMacro
+Macro xGetLogString() : PeekS(xGetLogString_(), -1, #PB_Ascii) : EndMacro
 Prototype.L _xClearLogString()
 Global xClearLogString._xClearLogString = GetFunction(*Library_, "_xClearLogString@0")
 Prototype.L _xSetLogLevel_(level.L)
@@ -2360,10 +2360,10 @@ Prototype.L _xSurfaceAlphaFunc(surface.L, alphaFunc.L)
 Global xSurfaceAlphaFunc._xSurfaceAlphaFunc = GetFunction(*Library_, "_xSurfaceAlphaFunc@8")
 Prototype.I _xCPUName()
 Global xCPUName_._xCPUName = GetFunction(*Library_, "_xCPUName@0")
-Macro xCPUName() : PeekS(xCPUName_()) : EndMacro
+Macro xCPUName() : PeekS(xCPUName_(), -1, #PB_Ascii) : EndMacro
 Prototype.I _xCPUVendor()
 Global xCPUVendor_._xCPUVendor = GetFunction(*Library_, "_xCPUVendor@0")
-Macro xCPUVendor() : PeekS(xCPUVendor_()) : EndMacro
+Macro xCPUVendor() : PeekS(xCPUVendor_(), -1, #PB_Ascii) : EndMacro
 Prototype.L _xCPUFamily()
 Global xCPUFamily._xCPUFamily = GetFunction(*Library_, "_xCPUFamily@0")
 Prototype.L _xCPUModel()
@@ -2374,12 +2374,12 @@ Prototype.L _xCPUSpeed()
 Global xCPUSpeed._xCPUSpeed = GetFunction(*Library_, "_xCPUSpeed@0")
 Prototype.I _xVideoInfo()
 Global xVideoInfo_._xVideoInfo = GetFunction(*Library_, "_xVideoInfo@0")
-Macro xVideoInfo() : PeekS(xVideoInfo_()) : EndMacro
+Macro xVideoInfo() : PeekS(xVideoInfo_(), -1, #PB_Ascii) : EndMacro
 Prototype.F _xVideoAspectRatio()
 Global xVideoAspectRatio._xVideoAspectRatio = GetFunction(*Library_, "_xVideoAspectRatio@0")
 Prototype.I _xVideoAspectRatioStr()
 Global xVideoAspectRatioStr_._xVideoAspectRatioStr = GetFunction(*Library_, "_xVideoAspectRatioStr@0")
-Macro xVideoAspectRatioStr() : PeekS(xVideoAspectRatioStr_()) : EndMacro
+Macro xVideoAspectRatioStr() : PeekS(xVideoAspectRatioStr_(), -1, #PB_Ascii) : EndMacro
 Prototype.F _xGetTotalPhysMem()
 Global xGetTotalPhysMem._xGetTotalPhysMem = GetFunction(*Library_, "_xGetTotalPhysMem@0")
 Prototype.F _xGetAvailPhysMem()
@@ -2402,7 +2402,7 @@ Prototype.F _xGetAvailVidNonlocalMem()
 Global xGetAvailVidNonlocalMem._xGetAvailVidNonlocalMem = GetFunction(*Library_, "_xGetAvailVidNonlocalMem@0")
 Prototype.I _xGetXors3dVersion()
 Global xGetXors3dVersion_._xGetXors3dVersion = GetFunction(*Library_, "_xGetXors3dVersion@0")
-Macro xGetXors3dVersion() : PeekS(xGetXors3dVersion_()) : EndMacro
+Macro xGetXors3dVersion() : PeekS(xGetXors3dVersion_(), -1, #PB_Ascii) : EndMacro
 Prototype.L _xGetXors3dMajorVersion()
 Global xGetXors3dMajorVersion._xGetXors3dMajorVersion = GetFunction(*Library_, "_xGetXors3dMajorVersion@0")
 Prototype.L _xGetXors3dMinorVersion()
@@ -2479,7 +2479,7 @@ Prototype.L _xLoadTexture(path.P-Ascii, flags.L)
 Global xLoadTexture._xLoadTexture = GetFunction(*Library_, "xLoadTexture")
 Prototype.I _xTextureName(texture.L)
 Global xTextureName_._xTextureName = GetFunction(*Library_, "_xTextureName@4")
-Macro xTextureName(texture) : PeekS(xTextureName_(texture)) : EndMacro
+Macro xTextureName(texture) : PeekS(xTextureName_(texture), -1, #PB_Ascii) : EndMacro
 Prototype.L _xPositionTexture(texture.L, x.F, y.F)
 Global xPositionTexture._xPositionTexture = GetFunction(*Library_, "_xPositionTexture@12")
 Prototype.L _xScaleTexture(texture.L, x.F, y.F)
