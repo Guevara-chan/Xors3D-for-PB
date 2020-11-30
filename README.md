@@ -11,7 +11,7 @@ Just `XIncludeFile "Xors3D.pbi"` to hook it up - maximum transparency, PB style.
 + XCopy-based installation.  
 
 ## /Remark/:
-**↯** *If you receive "invalid memory acceess" error right at first call of any procedure from Xors3D.dll...*  
+**↯** *If you receive "invalid memory access" error right at first call of any procedure from Xors3D.dll...*  
 ...Well, it happens. Unfortunalely, Xors3D is an extremely picky engine, so even users of modern Windows distributives may still encounter problems with DirectX9 version mismatch. To fix it, try installing latest package from Microsoft site: [June 2010](https://www.microsoft.com/en-us/download/details.aspx?id=8109)
 
 ## /Breakdown/:
